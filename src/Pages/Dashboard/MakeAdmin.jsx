@@ -283,7 +283,7 @@ const SalonCategoryList = () => {
                 fontWeight: "500",
               }}
             >
-              Make Admin
+              Add Admin
             </h3>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
@@ -291,15 +291,16 @@ const SalonCategoryList = () => {
               onClick={() => setOpenAddModel(true)}
               style={{
                 borderRadius: 8,
-                background: "#DBB162",
+                border: "none",
+                background: "#C1EEBD",
                 height: 40,
-                color: "white",
+                color: "#767676",
                 fontSize: 14,
                 fontWeight: "400",
               }}
               icon={<PlusOutlined />}
             >
-              Create admin profile
+              Add Admin
             </Button>
           </div>
         </div>

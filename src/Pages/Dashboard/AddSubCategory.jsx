@@ -9,92 +9,48 @@ import { FiSearch } from "react-icons/fi";
 
 const data = [
   {
-    key: 1,
-    category: "Worldview",
-    services_photo: <img src={Logo} height={48} width={48} />,
-    service_title: "Braids",
+    sno: "#491",
+    categoryName: "Szűts Gabriella",
   },
   {
-    key: 2,
-    category: "Champs-Élysées 246",
-    services_photo: <img src={Logo} height={48} width={48} />,
-    service_title: "Braids",
+    sno: "#492",
+    categoryName: "Pásztor Kíra",
   },
   {
-    key: 3,
-    category: "Way of Life",
-    services_photo: <img src={Logo} height={48} width={48} />,
-    service_title: "Braids",
+    sno: "#493",
+    categoryName: "Halász Emese",
   },
   {
-    key: 4,
-    category: "Champs-Élysées 246",
-    services_photo: <img src={Logo} height={48} width={48} />,
-    service_title: "Braids",
+    sno: "#494",
+    categoryName: "Somogyi Adél",
   },
   {
-    key: 5,
-    category: "Worldview",
-    services_photo: <img src={Logo} height={48} width={48} />,
-    service_title: "Braids",
+    sno: "#495",
+    categoryName: "Mezei Ágnes",
   },
   {
-    key: 6,
-    category: "Champs-Élysées 246",
-    services_photo: <img src={Logo} height={48} width={48} />,
-    service_title: "Braids",
+    sno: "#496",
+    categoryName: "Varga Boglárka",
   },
   {
-    key: 7,
-    category: "Worldview",
-    services_photo: <img src={Logo} height={48} width={48} />,
-    service_title: "Braids",
+    sno: "#497",
+    categoryName: "Katona Beatrix",
   },
   {
-    key: 8,
-    category: "Champs-Élysées 246",
-    services_photo: <img src={Logo} height={48} width={48} />,
-    service_title: "Braids",
+    sno: "#498",
+    categoryName: "Kende Lili",
   },
   {
-    key: 9,
-    category: "Worldview",
-    services_photo: <img src={Logo} height={48} width={48} />,
-    service_title: "Braids",
+    sno: "#499",
+    categoryName: "Novák Réka",
   },
   {
-    key: 10,
-    category: "Worldview",
-    services_photo: <img src={Logo} height={48} width={48} />,
-    service_title: "Braids",
-  },
-  {
-    key: 11,
-    category: "Way of Life",
-    services_photo: <img src={Logo} height={48} width={48} />,
-    service_title: "Braids",
-  },
-  {
-    key: 12,
-    category: "Worldview",
-    services_photo: <img src={Logo} height={48} width={48} />,
-    service_title: "Braids",
-  },
-  {
-    key: 13,
-    category: "Worldview",
-    services_photo: <img src={Logo} height={48} width={48} />,
-    service_title: "Braids",
-  },
-  {
-    key: 14,
-    category: "Champs-Élysées 246",
-    services_photo: <img src={Logo} height={48} width={48} />,
-    service_title: "Braids",
+    sno: "#500",
+    categoryName: "Takács Bianka",
   },
 ];
 
-const BookList = () => {
+const AddSubCategory = () => {
   const [openAddModel, setOpenAddModel] = useState(false);
   const [imgFile, setImgFile] = useState(null);
   const [category, setCategory] = useState("location");
@@ -119,20 +75,6 @@ const BookList = () => {
 
   const [itemForEdit, setItemForEdit] = useState(null);
   const dropdownRef = useRef();
-  const items = [
-    {
-      label: "Car",
-      key: "Car",
-    },
-    {
-      label: "Bike",
-      key: "Bike",
-    },
-    {
-      label: "Cycle",
-      key: "Cycle",
-    },
-  ];
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -173,36 +115,15 @@ const BookList = () => {
   const columns = [
     {
       title: "S.No",
-      dataIndex: "key",
-      key: "key",
+      dataIndex: "sno",
+      sno: "key",
     },
-    {
-      title: "Services Photo",
-      dataIndex: "services_photo",
-      key: "services_photo",
-      align: "center",
 
-      render: (img, record) => {
-        return (
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: 12,
-            }}
-          >
-            <p> {img} </p>
-            <p> {record?.service_title}</p>
-          </div>
-        );
-      },
-    },
     {
-      title: "Category",
-      dataIndex: "category",
-      key: "category",
-      align: "center",
+      title: "Category Name",
+      dataIndex: "categoryName",
+      key: "categoryName",
+      // align: "center",
     },
     {
       title: "Action",
@@ -288,12 +209,12 @@ const BookList = () => {
                 fontWeight: "500",
               }}
             >
-              All Book List
+              Add A Sub Category
             </h3>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
             {/* search  */}
-            <div
+            {/* <div
               style={{
                 width: "330px",
                 height: "40px",
@@ -321,8 +242,8 @@ const BookList = () => {
               }}
               //   onChange={handleChange}
               options={items}
-            />
-
+            /> */}
+            {/* 
             <Button
               style={{
                 borderRadius: 8,
@@ -334,21 +255,22 @@ const BookList = () => {
               }}
             >
               Share Community
-            </Button>
+            </Button> */}
 
             <Button
               onClick={() => setOpenAddModel(true)}
               style={{
                 borderRadius: 8,
-                background: "#DBB162",
+                background: "#C1EEBD",
                 height: 40,
-                color: "white",
+                color: "#767676",
                 fontSize: 14,
                 fontWeight: "400",
+                border: "none",
               }}
               icon={<PlusOutlined />}
             >
-              Add Service
+              Add Sub Category
             </Button>
           </div>
         </div>
@@ -496,4 +418,4 @@ const BookList = () => {
   );
 };
 
-export default BookList;
+export default AddSubCategory;

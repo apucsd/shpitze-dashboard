@@ -136,21 +136,20 @@ const TotalEarningGrowth = () => {
         style={{
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-between",
+          justifyContent: "end",
           gap: 10,
-          marginTop: "10px",
-          marginBottom: "10px",
+          // marginTop: "10px",
         }}
       >
-        <p
+        {/* <p
           style={{
             fontSize: "18px",
             fontWeight: "500",
             color: "#555555",
           }}
         >
-          Total users statistics
-        </p>
+          Total Earnings Statistics
+        </p> */}
         <Dropdown menu={{ items, onClick }}>
           <p
             style={{
@@ -172,8 +171,8 @@ const TotalEarningGrowth = () => {
         <AreaChart data={data} barGap={100}>
           <defs>
             <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#DBB162" stopOpacity={1} />
-              <stop offset="100%" stopColor="#DBB162" stopOpacity={0} />
+              <stop offset="0%" stopColor="#87DF50" stopOpacity={1} />
+              <stop offset="100%" stopColor="#87DF501A" stopOpacity={1} />
             </linearGradient>
           </defs>
           <CartesianGrid horizontal vertical={false} />
@@ -197,7 +196,7 @@ const TotalEarningGrowth = () => {
             connectNulls
             type="monotone"
             dataKey="uv"
-            stroke="#DBB162"
+            stroke="#87DF50"
             fill="url(#colorUv)"
           />
         </AreaChart>

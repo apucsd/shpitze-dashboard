@@ -2,7 +2,7 @@ import React, { useState, useRef, useMemo, useEffect } from "react";
 import JoditEditor from "jodit-react";
 import Swal from "sweetalert2";
 
-const Terms = () => {
+const About = () => {
   const editor = useRef(null);
   const [content, setContent] = useState("");
   const [isLoading, seLoading] = useState(false);
@@ -12,7 +12,7 @@ const Terms = () => {
     placeholder: "Start typings...",
     style: {
       height: 400,
-      background: "#FBF5EB",
+      background: "white",
     },
   };
   return (
@@ -34,10 +34,9 @@ const Terms = () => {
               fontWeight: "500",
             }}
           >
-            Terms & Condition
+            Terms and Conditions
           </h3>
         </div>
-        <div></div>
       </div>
       <div>
         <JoditEditor
@@ -61,7 +60,7 @@ const Terms = () => {
           style={{
             height: 44,
             width: 150,
-            backgroundColor: "#DBB162",
+            backgroundColor: "#BB6D42",
             color: "white",
             borderRadius: "8px",
             fontWeight: 500,
@@ -75,4 +74,4 @@ const Terms = () => {
   );
 };
 
-export default Terms;
+export default About;

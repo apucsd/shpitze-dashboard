@@ -12,6 +12,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import { FiUser } from "react-icons/fi";
 
 const TotalSellerChart = () => {
   const data = [
@@ -154,22 +155,69 @@ const TotalSellerChart = () => {
       <div
         style={{
           display: "flex",
-          alignItems: "center",
+          alignItems: "end",
           justifyContent: "space-between",
           gap: 10,
           marginTop: "10px",
           marginBottom: "10px",
         }}
       >
-        <p
-          style={{
-            fontSize: "18px",
-            fontWeight: "500",
-            color: "#555555",
-          }}
-        >
-          Donation statistics
-        </p>
+        <div className="space-y-1 mb-2 bg-white p-4 rounded-md">
+          <div className="flex items-center gap-2">
+            <span className="block">
+              <svg
+                width="44"
+                height="44"
+                viewBox="0 0 44 44"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="44" height="44" rx="22" fill="#EFEFEF" />
+                <path
+                  d="M28 31C28 28.8783 27.1571 26.8434 25.6569 25.3431C24.1566 23.8429 22.1217 23 20 23C17.8783 23 15.8434 23.8429 14.3431 25.3431C12.8429 26.8434 12 28.8783 12 31"
+                  fill="#BB6D42"
+                />
+                <path
+                  d="M28 31C28 28.8783 27.1571 26.8434 25.6569 25.3431C24.1566 23.8429 22.1217 23 20 23C17.8783 23 15.8434 23.8429 14.3431 25.3431C12.8429 26.8434 12 28.8783 12 31H28Z"
+                  stroke="#BB6D42"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M20 23C22.7614 23 25 20.7614 25 18C25 15.2386 22.7614 13 20 13C17.2386 13 15 15.2386 15 18C15 20.7614 17.2386 23 20 23Z"
+                  fill="#BB6D42"
+                  stroke="#BB6D42"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M32 30C32 26.63 30 23.5 28 22C28.6574 21.5068 29.1831 20.8591 29.5306 20.1143C29.878 19.3695 30.0365 18.5505 29.992 17.7298C29.9475 16.9091 29.7014 16.1121 29.2755 15.4092C28.8495 14.7063 28.2569 14.1193 27.55 13.7"
+                  stroke="#BB6D42"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <p
+              style={{
+                fontSize: "18px",
+                fontWeight: "500",
+                color: "#555555",
+              }}
+            >
+              Total Service Providers
+            </p>
+          </div>
+          <p className="font-semibold text-lg text-[#BB6D42]">10.10K</p>
+          <div className="flex items-center gap-3">
+            <p>Daily Earning</p>
+            <p className="text-[#767676]">100</p>
+          </div>
+        </div>
+
         <Dropdown menu={{ items, onClick }}>
           <p
             style={{
@@ -206,7 +254,7 @@ const TotalSellerChart = () => {
             fontWeight="400"
             strokeOpacity={0}
           />
-          <Bar barSize={10} dataKey="pv" stackId="a" fill="#DBB162" />
+          <Bar barSize={40} dataKey="pv" stackId="a" fill="#EAD2C4" />
         </BarChart>
       </ResponsiveContainer>
     </div>

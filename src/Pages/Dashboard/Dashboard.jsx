@@ -2,17 +2,24 @@ import { Layout } from "antd";
 import { useState } from "react";
 import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
 import Logo from "../../assets/logo.png";
-
-import { LuUser } from "react-icons/lu";
-import { IoSettingsOutline } from "react-icons/io5";
-import { MdOutlineDashboard } from "react-icons/md";
-import { GoBell } from "react-icons/go";
-import { LiaDonateSolid } from "react-icons/lia";
-import { TbCategoryPlus } from "react-icons/tb";
-import { FiUserPlus, FiLogOut } from "react-icons/fi";
-import { VscBook, VscFeedback } from "react-icons/vsc";
 import { RiNotification2Line } from "react-icons/ri";
-import donorIcon from "../../assets/donor.png";
+
+import {
+  AboutSVG,
+  AddAdminSVG,
+  AddCategorySVG,
+  DashboardSVG,
+  EmployerDetailsSVG,
+  FAQSVG,
+  LogOutSVG,
+  PrivacySVG,
+  ReportSVG,
+  SecuritySVG,
+  ServiceListSVG,
+  ServiceProviderSVG,
+  SubCategorySVG,
+  TransactionSVG,
+} from "../../SVGs";
 const { Header, Sider, Content } = Layout;
 
 const Dashboard = () => {
@@ -29,101 +36,127 @@ const Dashboard = () => {
     {
       title: "Dashboard",
       path: "/",
-      icon: <MdOutlineDashboard size={24} />,
+      icon: <DashboardSVG />,
     },
     {
-      title: "User Details",
-      path: "/user-list",
-      icon: <LuUser size={24} />,
+      title: "Service Providers",
+      path: "/service-providers",
+      icon: <ServiceProviderSVG />,
     },
     {
-      title: "Upload donation",
-      path: "/upload-donation",
-      icon: <LiaDonateSolid size={24} />,
+      title: "Employee Details",
+      path: "/employee-details",
+      icon: <EmployerDetailsSVG />,
     },
     {
-      title: "Donors Record",
-      path: "/donors-record",
-      icon: <img src={donorIcon} />,
-    },
-
-    {
-      title: "Books Category",
-      path: "/books-category-list",
-      icon: <TbCategoryPlus size={24} />,
-    },
-    {
-      title: "Books List",
-      path: "/books-list",
-      icon: <VscBook size={24} />,
+      title: "Services List",
+      path: "/service-list",
+      icon: <ServiceListSVG />,
     },
 
     {
-      title: "Settings",
-      path: "/setting",
-      icon: <IoSettingsOutline size={24} />,
-      option: true,
-      optionsItems: [
-        {
-          title: "FAQ",
-          path: "/faq",
-        },
-        {
-          title: "Privacy Policy",
-          path: "/privacy",
-        },
-
-        {
-          title: "Terms & Condition",
-          path: "/terms",
-        },
-        {
-          title: "SIC guidelines",
-          path: "/sic",
-        },
-
-        {
-          title: "About Us",
-          path: "/about",
-        },
-      ],
+      title: "Transaction Details",
+      path: "/transaction-details",
+      icon: <TransactionSVG />,
     },
     {
-      title: "Notifications",
-      path: "/notification",
-      icon: <GoBell size={24} />,
-    },
-    {
-      title: "Feedback",
-      path: "/feedback",
-      icon: <VscFeedback size={24} />,
+      title: "Add Category",
+      path: "/add-category",
+      icon: <AddCategorySVG />,
     },
 
     {
-      title: "Add admin",
-      path: "/make-admin",
-      icon: <FiUserPlus size={24} />,
+      title: "Add Subcategory",
+      path: "/add-subcategory",
+      icon: <SubCategorySVG />,
+    },
+
+    // {
+    //   title: "Add Subcategory",
+    //   path: "/setting",
+    //   icon: <IoSettingsOutline size={24} />,
+    //   option: true,
+    //   optionsItems: [
+    //     {
+    //       title: "FAQ",
+    //       path: "/faq",
+    //     },
+    //     {
+    //       title: "Privacy Policy",
+    //       path: "/privacy",
+    //     },
+
+    //     {
+    //       title: "Terms & Condition",
+    //       path: "/terms",
+    //     },
+    //     {
+    //       title: "SIC guidelines",
+    //       path: "/sic",
+    //     },
+
+    //     {
+    //       title: "About Us",
+    //       path: "/about",
+    //     },
+    //   ],
+    // },
+    {
+      title: "About Us",
+      path: "/about",
+      icon: <AboutSVG />,
+    },
+    {
+      title: "FAQ",
+      path: "/faq",
+      icon: <FAQSVG />,
+    },
+
+    {
+      title: "Privacy Policy",
+      path: "/privacy-policy",
+      icon: <PrivacySVG />,
+    },
+    {
+      title: "Terms & Condition",
+      path: "/terms",
+      icon: <SecuritySVG />,
+    },
+    {
+      title: "Reports",
+      path: "/reports",
+      icon: <ReportSVG />,
+    },
+    {
+      title: "Add Admin",
+      path: "/add-admin",
+      icon: <AddAdminSVG />,
     },
     {
       title: "Log out",
       path: "/login",
-      icon: <FiLogOut size={24} />,
+      icon: <LogOutSVG />,
     },
   ];
 
   return (
-    <Layout style={{ height: "100vh", width: "100vw" }}>
+    <Layout
+      style={{ height: "100vh", width: "100vw", backgroundColor: "#ffffff" }}
+    >
       <Sider
         width="15vw"
         // className=" bg-[#F1E1C2]"
         style={{
           // overflow: "auto",
           position: "fixed",
-          height: "110vh",
-          paddingBottom: "60px",
+          height: "100vh",
+          marginTop: "95px",
+          borderRadius: "10px",
+
+          // paddingBottom: "60px",
           // overflowX: "hidden",
           zIndex: 2,
-          backgroundColor: "#FBF5EB",
+          backgroundColor: "#fff",
         }}
       >
         <div
@@ -137,11 +170,7 @@ const Dashboard = () => {
             // height: 60,
             padding: "0 0 20px 0",
           }}
-        >
-          <Link to="/">
-            <img src={Logo} height="30px" />
-          </Link>
-        </div>
+        ></div>
 
         {/* <div
           style={{
@@ -191,10 +220,10 @@ const Dashboard = () => {
                       alignItems: "flex-end",
                       margin: "auto  0 auto 0",
                       gap: "14px",
-                      background: setting ? "#DBB162" : "none",
+                      background: setting ? "#EBEBEB" : "none",
                       width: "100%",
-                      padding: "10px 10px",
-                      // borderRadius: "100px 0px 0px 100px",
+                      padding: "14px 8px 14px 12px",
+                      borderRadius: "100px 0px 0px 100px",
                     }}
                   >
                     <div style={{ height: "24px" }}>{item.icon}</div>
@@ -247,15 +276,14 @@ const Dashboard = () => {
                               style={{
                                 fontSize: "14px",
                                 marginBottom: "5px",
-                                background:
-                                  optionItem.path === pathname
-                                    ? "#D0D2CE"
-                                    : "white",
+                                backgroundColor:
+                                  optionItem.path === pathname ? "#D0D2CE" : "",
                                 height: "fit-content",
 
-                                marginTop: "10px",
+                                margin: "10px 0px",
                                 width: "100%",
-                                padding: "7px 7px",
+                                padding: "14px 8px 14px 12px",
+                                borderRadius: "100px 0px 0px 100px",
                               }}
                             >
                               {optionItem.title}
@@ -270,14 +298,14 @@ const Dashboard = () => {
                   to={item.path}
                   style={{
                     display: "flex",
-                    color: item.path === pathname ? "white" : "Black",
+                    color: item.path === pathname ? "" : "Black",
                     alignItems: "flex-end",
                     margin: "auto  0 auto 0",
                     gap: "14px",
-                    background: item.path === pathname ? "#DBB162" : "none",
+                    background: item.path === pathname ? "#EBEBEB" : "none",
                     width: "100%",
-                    padding: "6px 6px",
-                    // borderRadius: "100px 0px 0px 100px",
+                    padding: "14px 8px 14px 12px",
+                    borderRadius: "100px 0px 0px 100px",
                   }}
                 >
                   <div style={{ height: "24px" }}>{item.icon}</div>
@@ -305,7 +333,7 @@ const Dashboard = () => {
             height: "80px",
             zIndex: 1,
             padding: 0,
-            backgroundColor: "#FBF5EB",
+            backgroundColor: "#fff",
             display: "flex",
             justifyContent: "flex-end",
             paddingRight: "75px",
@@ -397,6 +425,7 @@ const Dashboard = () => {
         <Content
           style={{
             marginTop: "95px",
+            backgroundColor: "white",
             // marginBottom: "20px",
             marginLeft: "16%",
             marginRight: "10px",

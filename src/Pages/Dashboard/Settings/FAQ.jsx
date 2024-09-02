@@ -1,334 +1,215 @@
-import { Form, Input, Modal, Table, Button, Row, Col } from "antd";
-import TextArea from "antd/es/input/TextArea";
-import React, { useEffect, useState } from "react";
-import { CiEdit } from "react-icons/ci";
-import { FaPlus } from "react-icons/fa6";
-import { GoQuestion } from "react-icons/go";
-import { RxCross2 } from "react-icons/rx";
+import { Button } from "antd";
+import React from "react";
+import { PlusOutlined } from "@ant-design/icons";
 
-import Swal from "sweetalert2";
-
-const data = [
-  {
-    key: "1",
-    question: "What is an affiliate e-commerce website?",
-    ans: "convallis. Praesent felis, placerat Ut ac quis dui volutpat vitae elementum quis adipiscing malesuada tempor non ipsum non, nec vitae amet, Donec tincidunt efficitur. in In ipsum Cras turpis viverra laoreet ullamcorper placerat diam sed leo. faucibus vitae eget vitae vehicula, luctus id Lorem fringilla tempor faucibus ipsum Vestibulum tincidunt ullamcorper elit diam turpis placerat vitae Nunc vehicula, ex faucibus venenatis at, maximus commodo urna. Nam ex quis sit non vehicula, massa urna at ",
-  },
-  {
-    key: "2",
-    question: "What is an affiliate e-commerce website?2",
-    ans: "convallis. Praesent felis, placerat Ut ac quis dui volutpat vitae elementum quis adipiscing malesuada tempor non ipsum non, nec vitae amet, Donec tincidunt efficitur. in In ipsum Cras turpis viverra laoreet ullamcorper placerat diam sed leo. faucibus vitae eget vitae vehicula, luctus id Lorem fringilla tempor faucibus ipsum Vestibulum tincidunt ullamcorper elit diam turpis placerat vitae Nunc vehicula, ex faucibus venenatis at, maximus commodo urna. Nam ex quis sit non vehicula, massa urna at ",
-  },
-  {
-    key: "3",
-    question: "What is an affiliate e-commerce website?",
-    ans: "convallis. Praesent felis, placerat Ut ac quis dui volutpat vitae elementum quis adipiscing malesuada tempor non ipsum non, nec vitae amet, Donec tincidunt efficitur. in In ipsum Cras turpis viverra laoreet ullamcorper placerat diam sed leo. faucibus vitae eget vitae vehicula, luctus id Lorem fringilla tempor faucibus ipsum Vestibulum tincidunt ullamcorper elit diam turpis placerat vitae Nunc vehicula, ex faucibus venenatis at, maximus commodo urna. Nam ex quis sit non vehicula, massa urna at ",
-  },
-  {
-    key: "4",
-    question: "What is an affiliate e-commerce website?",
-    ans: "convallis. Praesent felis, placerat Ut ac quis dui volutpat vitae elementum quis adipiscing malesuada tempor non ipsum non, nec vitae amet, Donec tincidunt efficitur. in In ipsum Cras turpis viverra laoreet ullamcorper placerat diam sed leo. faucibus vitae eget vitae vehicula, luctus id Lorem fringilla tempor faucibus ipsum Vestibulum tincidunt ullamcorper elit diam turpis placerat vitae Nunc vehicula, ex faucibus venenatis at, maximus commodo urna. Nam ex quis sit non vehicula, massa urna at ",
-  },
-  {
-    key: "5",
-    question: "What is an affiliate e-commerce website?",
-    ans: "convallis. Praesent felis, placerat Ut ac quis dui volutpat vitae elementum quis adipiscing malesuada tempor non ipsum non, nec vitae amet, Donec tincidunt efficitur. in In ipsum Cras turpis viverra laoreet ullamcorper placerat diam sed leo. faucibus vitae eget vitae vehicula, luctus id Lorem fringilla tempor faucibus ipsum Vestibulum tincidunt ullamcorper elit diam turpis placerat vitae Nunc vehicula, ex faucibus venenatis at, maximus commodo urna. Nam ex quis sit non vehicula, massa urna at ",
-  },
-  {
-    key: "6",
-    question: "What is an affiliate e-commerce website?",
-    ans: "convallis. Praesent felis, placerat Ut ac quis dui volutpat vitae elementum quis adipiscing malesuada tempor non ipsum non, nec vitae amet, Donec tincidunt efficitur. in In ipsum Cras turpis viverra laoreet ullamcorper placerat diam sed leo. faucibus vitae eget vitae vehicula, luctus id Lorem fringilla tempor faucibus ipsum Vestibulum tincidunt ullamcorper elit diam turpis placerat vitae Nunc vehicula, ex faucibus venenatis at, maximus commodo urna. Nam ex quis sit non vehicula, massa urna at ",
-  },
-];
 const FAQ = () => {
-  const [openAddModel, setOpenAddModel] = useState(false);
-  const [openEditModal, setOpenEditModal] = useState(false);
-  const [showDelete, setShowDelete] = useState(false);
-  const [deleteId, setDeleteId] = useState("");
-  const [editID, seteditID] = useState("");
-  const [question, setQuestion] = useState("");
-  const [ans, setans] = useState("");
-
-  const handelsubmit = (e) => {
-    e.preventDefault();
-    const question = e.target.question.value;
-    const ans = e.target.ans.value;
-    if (!question || !ans) {
-      return false;
-    }
-    // add faq
-  };
-  //update faq
-  const handleUpdate = (e) => {
-    e.preventDefault();
-  };
   return (
-    <div className="bg-white  px-3 py-2 rounded-lg">
-      <div style={{ margin: "24px 0" }}>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            width: "100%",
-          }}
-        >
-          <h3 style={{ fontSize: "24px", fontWeight: 600, color: "black" }}>
-            Frequently Asked Questions
-          </h3>
-          <button
-            onClick={() => setOpenAddModel(true)}
+    <div className="p-4">
+      <div>
+        <div className="flex justify-between items-center">
+          <h1 className="text-2xl font-bold">FAQ</h1>
+          <Button
             style={{
-              borderRadius: "4px",
-              color: "#F2F2F2",
-              backgroundColor: "#DBB162",
+              borderRadius: 8,
+              background: "#C1EEBD",
+              height: 40,
+              color: "#767676",
+              fontSize: 14,
+              fontWeight: "400",
               border: "none",
-              outline: "none",
-              cursor: "pointer",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: "4px",
-              padding: "10px 20px",
-              fontWeight: "500",
             }}
+            icon={<PlusOutlined />}
           >
-            <FaPlus
-              style={{
-                marginTop: "-2px",
-              }}
-            />
             Add FAQ
-          </button>
+          </Button>
         </div>
-      </div>
-      <div className="bg-white py-6 px-4 rounded-md">
-        {data.map((item, index) => (
-          <div key={index} className="flex justify-between items-start gap-4 ">
-            <div className="mt-3">
-              <GoQuestion color="#DBB162" size={25} />
-            </div>
-            <div className="w-full ">
-              <p className="text-base font-medium border-b rounded-xl py-2 px-4 flex items-center gap-8 bg-slate-50">
-                <span className=" flex-1 "> {item?.question}</span>
-              </p>
-              <div className="flex justify-start items-start gap-2 border-b  py-2 px-4  rounded-xl my-4 bg-slate-50">
-                <p className="text-[#919191] leading-[24px] mb-6 ">
-                  NIFI is a comprehensive nail salon platform app designed to
-                  connect clients with top-rated nail salons and professionals,
-                  offering features like appointment booking, style exploration,
-                  and business management tools.
-                </p>
-              </div>
-            </div>
-            <div className="w-[4%] flex justify-start items-center pt-4 gap-2">
-              <CiEdit
-                onClick={() => {
-                  setOpenEditModal(true);
-                  const filterdData = FAQData.filter(
-                    (filterId) => filterId?._id === item?._id
-                  );
-                  setQuestion(filterdData[0]?.question);
-                  setans(filterdData[0]?.answer);
-                  seteditID(item?._id);
-                }}
-                className="text-2xl cursor-pointer text-[#DBB162]"
-              />
-              <RxCross2
-                onClick={() => {
-                  setDeleteId(item?._id);
-                  setShowDelete(true);
-                }}
-                className="text-2xl cursor-pointer text-red-600"
-              />
-            </div>
+        <div>
+          {/* faq 1 */}
+          <div className="flex items-center gap-5 justify-between my-3">
+            <h2 className="flex gap-3 text-secondary font-semibold shadow-md w-full py-2 px-2 rounded-md">
+              <span>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20ZM10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM9 13H11V15H9V13ZM11 11.3551V12H9V10.5C9 9.9477 9.4477 9.5 10 9.5C10.8284 9.5 11.5 8.8284 11.5 8C11.5 7.17157 10.8284 6.5 10 6.5C9.2723 6.5 8.6656 7.01823 8.5288 7.70577L6.56731 7.31346C6.88637 5.70919 8.302 4.5 10 4.5C11.933 4.5 13.5 6.067 13.5 8C13.5 9.5855 12.4457 10.9248 11 11.3551Z"
+                    fill="#F27405"
+                  />
+                </svg>
+              </span>
+              What is Shpitze?
+            </h2>
+            <button>
+              {/* edit button */}
+              <svg
+                width="40"
+                height="32"
+                viewBox="0 0 40 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="40" height="32" rx="6" fill="#F9F9F9" />
+                <path
+                  d="M13 22.89H14.4142L23.7279 13.5763L22.3137 12.1621L13 21.4758V22.89ZM29 24.89H11V20.6473L24.435 7.21231C24.8256 6.82179 25.4587 6.82179 25.8492 7.21231L28.6777 10.0407C29.0682 10.4313 29.0682 11.0644 28.6777 11.4549L17.2426 22.89H29V24.89ZM23.7279 10.7478L25.1421 12.1621L26.5563 10.7478L25.1421 9.33363L23.7279 10.7478Z"
+                  fill="#F27405"
+                />
+              </svg>
+            </button>
           </div>
-        ))}
+          <div className="flex items-start gap-5">
+            <p className=" w-full py-2 px-2 rounded-md min-h-[140px] text-[#818181] font-medium shadow-md">
+              Shpitze is a platform that connects businesses with qualified,
+              on-demand professionals for temporary or part-time work. Our app
+              makes it easy for businesses to find professionals when they need
+              extra help or to cover staff shortages.
+            </p>
+            <button>
+              {/* delete button */}
+              <svg
+                width="40"
+                height="32"
+                viewBox="0 0 40 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="40" height="32" rx="6" fill="#F9F9F9" />
+                <path
+                  d="M15 8V6H25V8H30V10H28V25C28 25.5523 27.5523 26 27 26H13C12.4477 26 12 25.5523 12 25V10H10V8H15ZM14 10V24H26V10H14ZM17 13H19V21H17V13ZM21 13H23V21H21V13Z"
+                  fill="#D93D04"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div>
+          {/* faq 2 */}
+          <div className="flex items-center gap-5 justify-between my-3">
+            <h2 className="flex gap-3 text-secondary font-semibold shadow-md w-full py-2 px-2 rounded-md">
+              <span>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20ZM10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM9 13H11V15H9V13ZM11 11.3551V12H9V10.5C9 9.9477 9.4477 9.5 10 9.5C10.8284 9.5 11.5 8.8284 11.5 8C11.5 7.17157 10.8284 6.5 10 6.5C9.2723 6.5 8.6656 7.01823 8.5288 7.70577L6.56731 7.31346C6.88637 5.70919 8.302 4.5 10 4.5C11.933 4.5 13.5 6.067 13.5 8C13.5 9.5855 12.4457 10.9248 11 11.3551Z"
+                    fill="#F27405"
+                  />
+                </svg>
+              </span>
+              How does Shpitze work for employers?
+            </h2>
+            <p>
+              {/* edit button */}
+              <svg
+                width="40"
+                height="32"
+                viewBox="0 0 40 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="40" height="32" rx="6" fill="#F9F9F9" />
+                <path
+                  d="M13 22.89H14.4142L23.7279 13.5763L22.3137 12.1621L13 21.4758V22.89ZM29 24.89H11V20.6473L24.435 7.21231C24.8256 6.82179 25.4587 6.82179 25.8492 7.21231L28.6777 10.0407C29.0682 10.4313 29.0682 11.0644 28.6777 11.4549L17.2426 22.89H29V24.89ZM23.7279 10.7478L25.1421 12.1621L26.5563 10.7478L25.1421 9.33363L23.7279 10.7478Z"
+                  fill="#F27405"
+                />
+              </svg>
+            </p>
+          </div>
+          <div className="flex items-start gap-5">
+            <p className=" w-full py-2 px-2 rounded-md min-h-[140px] text-[#818181] font-medium shadow-md">
+              Shpitze is a platform that connects businesses with qualified,
+              on-demand professionals for temporary or part-time work. Our app
+              makes it easy for businesses to find professionals when they need
+              extra help or to cover staff shortages.
+            </p>
+            <button>
+              {/* delete button */}
+              <svg
+                width="40"
+                height="32"
+                viewBox="0 0 40 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="40" height="32" rx="6" fill="#F9F9F9" />
+                <path
+                  d="M15 8V6H25V8H30V10H28V25C28 25.5523 27.5523 26 27 26H13C12.4477 26 12 25.5523 12 25V10H10V8H15ZM14 10V24H26V10H14ZM17 13H19V21H17V13ZM21 13H23V21H21V13Z"
+                  fill="#D93D04"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div>
+          {/* faq 3 */}
+          <div className="flex items-center gap-5 justify-between my-3">
+            <h2 className="flex gap-3 text-secondary font-semibold shadow-md w-full py-2 px-2 rounded-md">
+              <span>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20ZM10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM9 13H11V15H9V13ZM11 11.3551V12H9V10.5C9 9.9477 9.4477 9.5 10 9.5C10.8284 9.5 11.5 8.8284 11.5 8C11.5 7.17157 10.8284 6.5 10 6.5C9.2723 6.5 8.6656 7.01823 8.5288 7.70577L6.56731 7.31346C6.88637 5.70919 8.302 4.5 10 4.5C11.933 4.5 13.5 6.067 13.5 8C13.5 9.5855 12.4457 10.9248 11 11.3551Z"
+                    fill="#F27405"
+                  />
+                </svg>
+              </span>
+              How does Shpitze work for service providers?
+            </h2>
+            <p>
+              {/* edit button */}
+              <svg
+                width="40"
+                height="32"
+                viewBox="0 0 40 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="40" height="32" rx="6" fill="#F9F9F9" />
+                <path
+                  d="M13 22.89H14.4142L23.7279 13.5763L22.3137 12.1621L13 21.4758V22.89ZM29 24.89H11V20.6473L24.435 7.21231C24.8256 6.82179 25.4587 6.82179 25.8492 7.21231L28.6777 10.0407C29.0682 10.4313 29.0682 11.0644 28.6777 11.4549L17.2426 22.89H29V24.89ZM23.7279 10.7478L25.1421 12.1621L26.5563 10.7478L25.1421 9.33363L23.7279 10.7478Z"
+                  fill="#F27405"
+                />
+              </svg>
+            </p>
+          </div>
+          <div className="flex items-start gap-5">
+            <p className=" w-full py-2 px-2 rounded-md min-h-[140px] text-[#818181] font-medium shadow-md">
+              Shpitze is a platform that connects businesses with qualified,
+              on-demand professionals for temporary or part-time work. Our app
+              makes it easy for businesses to find professionals when they need
+              extra help or to cover staff shortages.
+            </p>
+            <button>
+              {/* delete button */}
+              <svg
+                width="40"
+                height="32"
+                viewBox="0 0 40 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="40" height="32" rx="6" fill="#F9F9F9" />
+                <path
+                  d="M15 8V6H25V8H30V10H28V25C28 25.5523 27.5523 26 27 26H13C12.4477 26 12 25.5523 12 25V10H10V8H15ZM14 10V24H26V10H14ZM17 13H19V21H17V13ZM21 13H23V21H21V13Z"
+                  fill="#D93D04"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
-      <Modal
-        centered
-        open={openAddModel}
-        onCancel={() => setOpenAddModel(false)}
-        width={500}
-        footer={false}
-      >
-        <div className="p-6">
-          <h1
-            className=" text-[20px] font-medium"
-            style={{ marginBottom: "12px" }}
-          >
-            Add FAQ
-          </h1>
-          <form onSubmit={handelsubmit}>
-            <div style={{ marginBottom: "16px" }}>
-              <label style={{ display: "block", marginBottom: "5px" }}>
-                Question
-              </label>
-              <input
-                onChange={(e) => {
-                  setQuestion(e.target.value);
-                }}
-                type="Text"
-                placeholder="Enter Question"
-                style={{
-                  border: "1px solid #E0E4EC",
-                  padding: "10px",
-                  height: "52px",
-                  background: "white",
-                  borderRadius: "8px",
-                  outline: "none",
-                  width: "100%",
-                }}
-                name="question"
-              />
-            </div>
-            <div style={{ marginBottom: "16px" }}>
-              <label style={{ display: "block", marginBottom: "5px" }}>
-                Answer
-              </label>
-              <textarea
-                onChange={(e) => {
-                  setans(e.target.value);
-                }}
-                type="Text"
-                placeholder="Enter answer"
-                style={{
-                  border: "1px solid #E0E4EC",
-                  padding: "10px",
-                  height: "152px",
-                  background: "white",
-                  borderRadius: "8px",
-                  outline: "none",
-                  width: "100%",
-                  resize: "none",
-                }}
-                name="ans"
-              />
-            </div>
-            <input
-              className="cursor-pointer"
-              htmlType="submit"
-              block
-              style={{
-                border: "none",
-                height: "44px",
-                background: "#DBB162",
-                color: "white",
-                borderRadius: "8px",
-                outline: "none",
-                padding: "10px 20px",
-              }}
-              value={`Save & change`}
-              type="submit"
-            />
-          </form>
-        </div>
-      </Modal>
-      <Modal
-        centered
-        open={openEditModal}
-        onCancel={() => setOpenEditModal(false)}
-        width={500}
-        footer={false}
-      >
-        <div className="p-6">
-          <h1
-            style={{ marginBottom: "12px" }}
-            className=" text-[20px] font-medium"
-          >
-            Update FAQ
-          </h1>
-          <form onSubmit={handleUpdate}>
-            <div style={{ marginBottom: "16px" }}>
-              <label style={{ display: "block", marginBottom: "5px" }}>
-                Question
-              </label>
-              <input
-                onChange={(e) => {
-                  setQuestion(e.target.value);
-                }}
-                type="Text"
-                placeholder="Enter Question"
-                style={{
-                  border: "1px solid #E0E4EC",
-                  padding: "10px",
-                  height: "52px",
-                  background: "white",
-                  borderRadius: "8px",
-                  outline: "none",
-                  width: "100%",
-                }}
-                value={question}
-                name="question"
-              />
-            </div>
-            <div style={{ marginBottom: "16px" }}>
-              <label style={{ display: "block", marginBottom: "5px" }}>
-                Answer
-              </label>
-              <textarea
-                onChange={(e) => {
-                  setans(e.target.value);
-                }}
-                type="Text"
-                placeholder="Enter answer"
-                style={{
-                  border: "1px solid #E0E4EC",
-                  padding: "10px",
-                  height: "152px",
-                  background: "white",
-                  borderRadius: "8px",
-                  outline: "none",
-                  width: "100%",
-                  resize: "none",
-                }}
-                value={
-                  "NIFI is a comprehensive nail salon platform app designed to connect clients with top-rated nail salons and professionals, offering features like appointment booking, style exploration, and business management tools."
-                }
-                name="ans"
-              />
-            </div>
-            <input
-              className="cursor-pointer"
-              htmlType="submit"
-              block
-              style={{
-                border: "none",
-                height: "44px",
-                background: "#6A5ECC",
-                color: "white",
-                borderRadius: "8px",
-                outline: "none",
-                padding: "10px 20px",
-              }}
-              value={`Save & change`}
-              type="submit"
-            />
-          </form>
-        </div>
-      </Modal>
-      <Modal
-        centered
-        open={showDelete}
-        onCancel={() => setShowDelete(false)}
-        width={400}
-        footer={false}
-      >
-        <div className="p-6 text-center">
-          <p className="text-[#6A5ECC] text-center font-semibold">
-            Are you sure !
-          </p>
-          <p className="pt-4 pb-12 text-center">
-            Do you want to delete this content ?
-          </p>
-          <button
-            // onClick={handeldelete}
-            className="bg-[#DBB162] py-2 px-5 text-white rounded-md"
-          >
-            Confirm
-          </button>
-        </div>
-      </Modal>
     </div>
   );
 };

@@ -12,7 +12,7 @@ const About = () => {
     placeholder: "Start typings...",
     style: {
       height: 400,
-      background: "#FBF5EB",
+      background: "white",
     },
   };
   return (
@@ -34,7 +34,7 @@ const About = () => {
               fontWeight: "500",
             }}
           >
-            About
+            About Us
           </h3>
         </div>
         <div></div>
@@ -61,7 +61,7 @@ const About = () => {
           style={{
             height: 44,
             width: 150,
-            backgroundColor: "#DBB162",
+            backgroundColor: "#BB6D42",
             color: "white",
             borderRadius: "8px",
             fontWeight: 500,

@@ -2,7 +2,7 @@ import React, { useState, useRef, useMemo, useEffect } from "react";
 import JoditEditor from "jodit-react";
 import Swal from "sweetalert2";
 
-const PrivacyPolicy = () => {
+const About = () => {
   const editor = useRef(null);
   const [content, setContent] = useState("");
   const [isLoading, seLoading] = useState(false);
@@ -12,7 +12,7 @@ const PrivacyPolicy = () => {
     placeholder: "Start typings...",
     style: {
       height: 400,
-      background: "#FBF5EB",
+      background: "white",
     },
   };
   return (
@@ -37,7 +37,6 @@ const PrivacyPolicy = () => {
             Privacy Policy
           </h3>
         </div>
-        <div></div>
       </div>
       <div>
         <JoditEditor
@@ -61,7 +60,7 @@ const PrivacyPolicy = () => {
           style={{
             height: 44,
             width: 150,
-            backgroundColor: "#DBB162",
+            backgroundColor: "#BB6D42",
             color: "white",
             borderRadius: "8px",
             fontWeight: 500,
@@ -75,4 +74,4 @@ const PrivacyPolicy = () => {
   );
 };
 
-export default PrivacyPolicy;
+export default About;
