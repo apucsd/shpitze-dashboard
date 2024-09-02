@@ -26,7 +26,7 @@ const FAQ = () => {
         <div>
           {/* faq 1 */}
           <div className="flex items-center gap-5 justify-between my-3">
-            <h2 className="flex gap-3 text-secondary font-semibold shadow-md w-full py-2 px-2 rounded-md">
+            <h2 className="flex gap-3 text-secondary font-semibold shadow w-full py-2 px-2 rounded-md">
               <span>
                 <svg
                   width="20"
@@ -61,7 +61,7 @@ const FAQ = () => {
             </button>
           </div>
           <div className="flex items-start gap-5">
-            <p className=" w-full py-2 px-2 rounded-md min-h-[140px] text-[#818181] font-medium shadow-md">
+            <p className=" w-full py-2 px-2 rounded-md min-h-[140px] text-[#818181] font-medium shadow">
               Shpitze is a platform that connects businesses with qualified,
               on-demand professionals for temporary or part-time work. Our app
               makes it easy for businesses to find professionals when they need
@@ -88,7 +88,7 @@ const FAQ = () => {
         <div>
           {/* faq 2 */}
           <div className="flex items-center gap-5 justify-between my-3">
-            <h2 className="flex gap-3 text-secondary font-semibold shadow-md w-full py-2 px-2 rounded-md">
+            <h2 className="flex gap-3 text-secondary font-semibold shadow w-full py-2 px-2 rounded-md">
               <span>
                 <svg
                   width="20"
@@ -123,7 +123,7 @@ const FAQ = () => {
             </p>
           </div>
           <div className="flex items-start gap-5">
-            <p className=" w-full py-2 px-2 rounded-md min-h-[140px] text-[#818181] font-medium shadow-md">
+            <p className=" w-full py-2 px-2 rounded-md min-h-[140px] text-[#818181] font-medium shadow">
               Shpitze is a platform that connects businesses with qualified,
               on-demand professionals for temporary or part-time work. Our app
               makes it easy for businesses to find professionals when they need
@@ -150,7 +150,7 @@ const FAQ = () => {
         <div>
           {/* faq 3 */}
           <div className="flex items-center gap-5 justify-between my-3">
-            <h2 className="flex gap-3 text-secondary font-semibold shadow-md w-full py-2 px-2 rounded-md">
+            <h2 className="flex gap-3 text-secondary font-semibold shadow w-full py-2 px-2 rounded-md">
               <span>
                 <svg
                   width="20"
@@ -185,7 +185,7 @@ const FAQ = () => {
             </p>
           </div>
           <div className="flex items-start gap-5">
-            <p className=" w-full py-2 px-2 rounded-md min-h-[140px] text-[#818181] font-medium shadow-md">
+            <p className=" w-full py-2 px-2 rounded-md min-h-[140px] text-[#818181] font-medium shadow">
               Shpitze is a platform that connects businesses with qualified,
               on-demand professionals for temporary or part-time work. Our app
               makes it easy for businesses to find professionals when they need

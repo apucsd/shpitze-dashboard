@@ -171,7 +171,8 @@ const TotalEarningGrowth = () => {
         <AreaChart data={data} barGap={100}>
           <defs>
             <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#87DF50" stopOpacity={1} />
+              <stop offset="0%" stopColor="#6edb25" stopOpacity={1} />
+              <stop offset="50%" stopColor="#6edb25" stopOpacity={1} />
               <stop offset="100%" stopColor="#87DF501A" stopOpacity={1} />
             </linearGradient>
           </defs>

@@ -73,11 +73,11 @@ function App() {
               <Route path="/add-admin" element={<MakeAdmin />} />
 
               <Route path="/notification" element={<Notification />} />
-              {/* <Route path="/setting" element={<FAQ />} />
+              <Route path="/setting" element={<FAQ />} />
               <Route path="/sic" element={<SICguidelines />} />
               <Route path="/make-admin" element={<MakeAdmin />} />
               <Route path="/admin-profile" element={<AdminProfile />} />
-              <Route path="/upload-donation" element={<UploadDonation />} /> */}
+              <Route path="/upload-donation" element={<UploadDonation />} />
 
               <Route
                 path="/setting-change-password"

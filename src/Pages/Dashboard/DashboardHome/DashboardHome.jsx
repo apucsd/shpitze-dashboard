@@ -9,6 +9,7 @@ import doner from "../../../assets/doner.png";
 import donation from "../../../assets/donation.png";
 import { RiShareForwardBoxFill } from "react-icons/ri";
 import TotalEarningGrowth from "./TotalEarningGrowth";
+import TotalEmployeeChart from "./TotalEmployeeChart";
 
 function DashboardHome() {
   const onChange = (pageNumber) => {
@@ -161,7 +162,7 @@ function DashboardHome() {
       </div> */}
       <div>
         <div className="flex gap-4 items-center bg-[#F7F7F7] p-2 m-3 rounded-md">
-          <div className="col-span-3 shadow-lg w-[248px] space-y-3 h-[412px] bg-white p-4 rounded-md">
+          <div className="col-span-3 shadow-lg w-[250px] space-y-3 h-[380px] bg-white p-4 rounded-md">
             <div className="flex items-center  gap-2">
               <span className="block">
                 <svg
@@ -200,7 +201,7 @@ function DashboardHome() {
           </div>
         </div>
 
-        <div className="grid grid-cols-12  items-center my-2">
+        <div className="grid grid-cols-12  items-center">
           <div className="col-span-6 bg-[#F7F7F7] p-2 m-3 rounded-md">
             {/* total services */}
 
@@ -208,7 +209,7 @@ function DashboardHome() {
           </div>
           <div className="col-span-6 bg-[#F7F7F7] p-2 m-3 rounded-md">
             {/* total Employee */}
-            <TotalSellerChart />
+            <TotalEmployeeChart />
           </div>
         </div>
       </div>

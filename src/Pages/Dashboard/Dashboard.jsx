@@ -140,26 +140,27 @@ const Dashboard = () => {
   ];
 
   return (
-    <Layout
-      style={{ height: "100vh", width: "100vw", backgroundColor: "#ffffff" }}
-    >
+    <Layout style={{ height: "100vh", width: "100vw" }}>
       <Sider
-        width="15vw"
+        width="14vw"
         // className=" bg-[#F1E1C2]"
         style={{
           // overflow: "auto",
           position: "fixed",
           height: "100vh",
           marginTop: "95px",
-          borderRadius: "10px",
-
+          borderRadius: "20px",
+          left: "20px",
           // paddingBottom: "60px",
           // overflowX: "hidden",
           zIndex: 2,
-          backgroundColor: "#fff",
+          backgroundColor: "white",
+          maxHeight: "90vh",
+
+          // overflowY: "scroll",
         }}
       >
-        <div
+        {/* <div
           className="logo"
           style={{
             display: "flex",
@@ -170,7 +171,7 @@ const Dashboard = () => {
             // height: 60,
             padding: "0 0 20px 0",
           }}
-        ></div>
+        ></div> */}
 
         {/* <div
           style={{
@@ -188,9 +189,10 @@ const Dashboard = () => {
             display: "flex",
             alignItems: "center",
             flexDirection: "column",
-            gap: "15px",
+            gap: "5px",
             height: "90%",
-            marginTop: 0,
+            marginTop: 10,
+            color: "#767676",
           }}
         >
           {linkItems.map((item, index) => (
@@ -216,7 +218,7 @@ const Dashboard = () => {
                     style={{
                       display: "flex",
 
-                      color: "black",
+                      color: "#767676",
                       alignItems: "flex-end",
                       margin: "auto  0 auto 0",
                       gap: "14px",
@@ -265,7 +267,7 @@ const Dashboard = () => {
                             style={{
                               display: "flex",
 
-                              color: "Black",
+                              color: "#767676",
                               alignItems: "flex-end",
 
                               // borderRadius: "100px 0px 0px 100px",
@@ -298,7 +300,7 @@ const Dashboard = () => {
                   to={item.path}
                   style={{
                     display: "flex",
-                    color: item.path === pathname ? "" : "Black",
+                    color: item.path === pathname ? "" : "#767676",
                     alignItems: "flex-end",
                     margin: "auto  0 auto 0",
                     gap: "14px",
@@ -324,7 +326,6 @@ const Dashboard = () => {
           ))}
         </ul>
       </Sider>
-
       <Layout>
         <Header
           style={{
@@ -335,11 +336,20 @@ const Dashboard = () => {
             padding: 0,
             backgroundColor: "#fff",
             display: "flex",
-            justifyContent: "flex-end",
+            justifyContent: "space-between",
+            alignItems: "center",
             paddingRight: "75px",
-            paddingLeft: "17vw",
           }}
         >
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <img className="mx-16 h-full" src={Logo} />
+          </div>
           <div
             style={{
               width: "220px",
@@ -410,7 +420,7 @@ const Dashboard = () => {
               />
               <h2
                 style={{
-                  color: "black",
+                  color: "#767676",
                   fontSize: "16px",
                   fontWeight: "600",
                   width: 200,
@@ -428,8 +438,8 @@ const Dashboard = () => {
             backgroundColor: "white",
             // marginBottom: "20px",
             marginLeft: "16%",
-            marginRight: "10px",
-
+            marginRight: "2%",
+            borderRadius: "20px",
             overflow: "auto",
             // padding: "20px",
           }}
