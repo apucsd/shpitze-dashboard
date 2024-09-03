@@ -371,11 +371,11 @@ const EmployeeDetails = () => {
   };
 
   return (
-    <div className="">
+    <div className="mx-5">
       <div
         style={{
           background: "white",
-          padding: "20px",
+          // padding: "20px",
           borderRadius: "12px",
         }}
       >
@@ -384,7 +384,7 @@ const EmployeeDetails = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            margin: "16px 0",
+            margin: "10px 0",
           }}
         >
           <div>
@@ -462,9 +462,9 @@ const EmployeeDetails = () => {
               defaultPageSize: 20,
               // defaultCurrent: 1,
               style: {
-                marginBottom: 20,
-                marginLeft: 20,
-                marginRight: 20,
+                // marginBottom: 20,
+                // marginLeft: 20,
+                // marginRight: 20,
                 width: "100%",
                 display: "flex",
                 // gap: 10,

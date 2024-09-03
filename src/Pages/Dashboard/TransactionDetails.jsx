@@ -219,7 +219,7 @@ const TransactionDetails = () => {
         if (status.toLowerCase() == "upcoming") {
           textColor = "black";
         }
-        if (status.toLowerCase() == "cancel") {
+        if (status.toLowerCase() == "cancelled") {
           textColor = "#EF5546";
         }
 
@@ -284,7 +284,7 @@ const TransactionDetails = () => {
   };
 
   return (
-    <div className="">
+    <div className=" ">
       <div
         style={{
           background: "white",

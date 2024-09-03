@@ -379,12 +379,13 @@ const Dashboard = () => {
                     width: "15px",
                     height: "15px",
                     borderRadius: "50%",
-                    background: "#F8EC41",
+                    background: "#FEA500",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    color: "#6A5ECC",
+                    color: "#fff",
                     position: "absolute",
+                    padding: "5px",
                     top: 8,
                     right: 10,
                     fontWeight: "500",
@@ -420,7 +421,7 @@ const Dashboard = () => {
               />
               <h2
                 style={{
-                  color: "#767676",
+                  color: "#333333",
                   fontSize: "16px",
                   fontWeight: "600",
                   width: 200,

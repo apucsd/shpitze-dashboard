@@ -420,11 +420,12 @@ const ServiceProviders = () => {
   };
 
   return (
-    <div className="">
+    <div className="mx-5 ">
       <div
         style={{
           background: "white",
-          padding: "20px",
+          // padding: "20px",
+          // commented out because
           borderRadius: "12px",
         }}
       >
@@ -433,7 +434,9 @@ const ServiceProviders = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            margin: "16px 0",
+            padding: "10px 0",
+
+            // commented out because
           }}
         >
           <div>
