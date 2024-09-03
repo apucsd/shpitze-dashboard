@@ -1,6 +1,7 @@
 import { Button, Checkbox, Form, Input } from "antd";
 import React from "react";
 import { useNavigate } from "react-router";
+import Logo from "../../assets/logo.png";
 
 import "./style.css";
 const Login = () => {
@@ -22,7 +23,7 @@ const Login = () => {
         height: "100vh",
       }}
     >
-      <div className="bgImg"></div>
+      {/* <div className="bgImg"></div> */}
       <div
         style={
           {
@@ -32,7 +33,7 @@ const Login = () => {
       >
         <Form
           name="normal_login"
-          className="login-form backdrop-blur-lg bg-white/70"
+          className="login-form backdrop-blur-lg border"
           initialValues={{
             remember: true,
           }}
@@ -42,13 +43,24 @@ const Login = () => {
             borderRadius: "12px",
             padding: "90px 57px",
             position: "relative",
+            boxShadow: "10px 21px 10px rgba(0, 0, 0, 0.03)",
             zIndex: 100,
           }}
           onFinish={onFinish}
         >
+          <img
+            style={{
+              height: "65px",
+              width: "171px",
+              margin: "auto",
+            }}
+            src={Logo}
+            alt="logo"
+          />
           <h1
             style={{
-              fontSize: "32px",
+              fontSize: "24px",
+              marginTop: "10px",
               color: "black",
               textAlign: "center",
               fontWeight: 500,
@@ -56,16 +68,20 @@ const Login = () => {
           >
             Login in to Account
           </h1>
-          <p className="text-lg py-6 text-center">
+          {/* <p className="text-lg py-6 text-center">
             Please enter your email and password to continue
-          </p>
+          </p> */}
           <div style={{ marginBottom: "24px" }}>
             <label
               htmlFor="email"
-              style={{ display: "block", marginBottom: "5px" }}
+              style={{
+                display: "block",
+
+                color: "#636363",
+                marginBottom: "5px",
+              }}
             >
-              {" "}
-              Email{" "}
+              Email
             </label>
             <Form.Item
               style={{ marginBottom: 0 }}
@@ -94,7 +110,12 @@ const Login = () => {
 
           <div style={{ marginBottom: "24px" }}>
             <label
-              style={{ display: "block", marginBottom: "5px" }}
+              style={{
+                display: "block",
+
+                color: "#636363",
+                marginBottom: "5px",
+              }}
               htmlFor="password"
             >
               Password
@@ -131,7 +152,14 @@ const Login = () => {
             }}
           >
             <Form.Item name="remember" valuePropName="checked" noStyle>
-              <Checkbox style={{ color: "black", fontSize: "16px" }}>
+              <Checkbox
+                style={{
+                  color: "black",
+
+                  color: "#636363",
+                  fontSize: "16px",
+                }}
+              >
                 Remember me
               </Checkbox>
             </Form.Item>
@@ -144,7 +172,13 @@ const Login = () => {
             </a>
           </div>
 
-          <Form.Item style={{ marginBottom: 0 }}>
+          <Form.Item
+            style={{
+              marginBottom: 0,
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
             <Button
               onClick={() => navigate("/")}
               type="primary"
@@ -153,10 +187,12 @@ const Login = () => {
               block
               style={{
                 height: "52px",
+                maxWidth: "99px",
+
                 fontWeight: "400px",
-                fontSize: "18px",
-                background: "#F27405",
-                marginTop: "56px",
+                fontSize: "15px",
+                background: "#BB6D42",
+                marginTop: "10px",
               }}
             >
               Sign In
