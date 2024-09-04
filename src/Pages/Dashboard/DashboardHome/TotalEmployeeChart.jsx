@@ -161,7 +161,7 @@ const TotalEmployeeChart = () => {
           marginBottom: "10px",
         }}
       >
-        <div className="space-y-1 mb-2 bg-white p-4 rounded-md">
+        <div className="space-y-1 mb-2 border bg-white p-4 rounded-md">
           <div className="flex items-center gap-2">
             <span className="block">
               <svg
@@ -234,7 +234,7 @@ const TotalEmployeeChart = () => {
           </p>
         </Dropdown>
       </div>
-      <ResponsiveContainer width={"100%"} height={200}>
+      <ResponsiveContainer width={"100%"} height={180}>
         <BarChart data={data} barGap={100}>
           <CartesianGrid strokeDasharray="20 20" horizontal vertical={false} />
           <XAxis
@@ -245,7 +245,7 @@ const TotalEmployeeChart = () => {
             fontWeight="400"
             strokeOpacity={0}
           />
-          <Tooltip />
+          <Tooltip cursor={{ fill: "transparent" }} />
           <YAxis
             tickCount={15}
             width={40}

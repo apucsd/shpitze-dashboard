@@ -73,3 +73,6 @@
   width: 100% !important;
   height: 190px !important;
 }
+.ant-layout {
+  background-color: #ebebeb;
+}

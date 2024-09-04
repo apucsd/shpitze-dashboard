@@ -39,18 +39,22 @@ const Otp = () => {
         justifyContent: "center",
       }}
     >
-      <div className="bgImg"></div>
+      {/* <div className="bgImg"></div> */}
       <div>
         <div
-          className=" backdrop-blur-lg bg-white/70"
+          className=" backdrop-blur-lg border"
           style={{
             width: "630px",
-
+            boxShadow: "10px 21px 10px rgba(0, 0, 0, 0.03)",
             borderRadius: "12px",
             padding: "90px 57px",
+            minHeight: "638.66px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
           }}
         >
-          <h1
+          {/* <h1
             className="font-semibold"
             style={{
               fontSize: "32px",
@@ -60,7 +64,7 @@ const Otp = () => {
             }}
           >
             Verification code
-          </h1>
+          </h1> */}
           <p
             style={{
               width: "380px",
@@ -68,9 +72,7 @@ const Otp = () => {
               margin: "0 auto 0 auto",
             }}
           >
-            We sent a reset link to{" "}
-            <span style={{ color: "#545454" }}> contact@dscode...com </span>
-            enter 6 digit code that mentioned in the email
+            Enter the 6-digit code sent to your email.
           </p>
           <div
             style={{
@@ -97,43 +99,58 @@ const Otp = () => {
               renderInput={(props) => <input {...props} />}
             />
           </div>
-          <Button
-            onClick={handleVerifyOtp}
-            block
-            htmlType="submit"
-            style={{
-              height: "52px",
-              fontWeight: "400px",
-              fontSize: "18px",
-              color: "white",
-              background: "#F27405",
-              marginTop: "30px",
-              border: "none",
-              outline: "none",
-              marginBottom: "20px",
-            }}
-          >
-            Verify
-          </Button>
-          <p
+          <div
             style={{
               display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
+              justifyContent: "center",
+              marginTop: "10px",
             }}
           >
-            Didn’t receive code?
+            <Button
+              onClick={handleVerifyOtp}
+              block
+              htmlType="submit"
+              style={{
+                height: "52px",
+                maxWidth: "99px",
+                color: "#fff",
+                fontWeight: "400px",
+                fontSize: "15px",
+                background: "#BB6D42",
+                marginTop: "10px",
+              }}
+            >
+              Verify
+            </Button>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginTop: "20px",
+              gap: "10px",
+            }}
+          >
+            <p
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
+              Didn’t receive code?
+            </p>
             <p
               onClick={handleResendEmail}
               style={{
-                color: "#00B047",
-                textDecoration: "underline",
+                color: "#BB6D42",
+                // textDecoration: "underline",
                 cursor: "pointer",
               }}
             >
-              Resend{" "}
+              Send Again
             </p>
-          </p>
+          </div>
         </div>
       </div>
     </div>

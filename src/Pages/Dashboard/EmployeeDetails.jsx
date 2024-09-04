@@ -326,7 +326,19 @@ const EmployeeDetails = () => {
               outline: "none",
             }}
           >
-            <FiArrowUpRight size={26} className=" text-secondary" />
+            <svg
+              width="40"
+              height="32"
+              viewBox="0 0 40 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect width="40" height="32" rx="6" fill="#F9F9F9" />
+              <path
+                d="M24.0208 13.4038L15.4142 22.0104L14 20.5962L22.6066 11.9896H15.0208V9.98959H26.0208V20.9896H24.0208V13.4038Z"
+                fill="#A1A1A1"
+              />
+            </svg>
           </button>
 
           <div>

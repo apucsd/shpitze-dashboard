@@ -31,17 +31,17 @@ const ForgotPassword = () => {
         height: "100vh",
       }}
     >
-      <div className="bgImg"></div>
+      {/* <div className="bgImg"></div> */}
       <div>
         <Form
           name="normal_login"
-          className="login-form backdrop-blur-lg bg-white/70"
+          className="login-form backdrop-blur-lg border"
           initialValues={{
             remember: true,
           }}
           style={{
             width: "630px",
-
+            boxShadow: "10px 21px 10px rgba(0, 0, 0, 0.03)",
             borderRadius: "12px",
             padding: "90px 57px",
             position: "relative",
@@ -51,7 +51,7 @@ const ForgotPassword = () => {
         >
           <h1
             style={{
-              fontSize: "32px",
+              fontSize: "24px",
               color: "black",
               textAlign: "center",
               fontWeight: 500,
@@ -59,6 +59,16 @@ const ForgotPassword = () => {
           >
             Forgot password ?
           </h1>
+          <p
+            style={{
+              color: "rgba(92, 92, 92, 1)",
+              textAlign: "center",
+              fontWeight: 400,
+              marginTop: "10px",
+            }}
+          >
+            Enter your email below to reset your password
+          </p>
 
           <div className=" mb-[24px] mt-[28px]">
             <label
@@ -93,19 +103,26 @@ const ForgotPassword = () => {
             </Form.Item>
           </div>
 
-          <Form.Item>
+          <Form.Item
+            style={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
             <Button
-              onClick={() => navigate("/otp")}
+              onClick={() => navigate("/")}
               type="primary"
               htmlType="submit"
               className="login-form-button"
               block
               style={{
                 height: "52px",
+                maxWidth: "99px",
+
                 fontWeight: "400px",
-                fontSize: "18px",
-                background: "#F27405",
-                marginTop: "36px",
+                fontSize: "15px",
+                background: "#BB6D42",
+                marginTop: "10px",
               }}
             >
               Send Code

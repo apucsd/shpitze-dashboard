@@ -348,7 +348,9 @@ const Dashboard = () => {
               alignItems: "center",
             }}
           >
-            <img className="mx-16 h-full" src={Logo} />
+            <Link to={"/"}>
+              <img className="mx-20 h-full" src={Logo} />
+            </Link>
           </div>
           <div
             style={{

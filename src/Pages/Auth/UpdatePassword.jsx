@@ -35,17 +35,17 @@ const UpdatePassword = () => {
         justifyContent: "center",
       }}
     >
-      <div className="bgImg"></div>
+      {/* <div className="bgImg"></div> */}
       <div>
         <Form
           name="normal_login"
-          className="login-form  backdrop-blur-lg bg-white/70"
+          className="login-form  backdrop-blur-lg border"
           initialValues={{
             remember: true,
           }}
           style={{
             width: "630px",
-
+            boxShadow: "10px 21px 10px rgba(0, 0, 0, 0.03)",
             borderRadius: "12px",
             padding: "90px 57px",
           }}
@@ -57,13 +57,14 @@ const UpdatePassword = () => {
               color: "black",
               marginBottom: "13px",
               textAlign: "center",
+              color: "#333333",
+              fontWeight: "bold",
             }}
           >
-            Set a new password
+            Create New Password
           </h1>
           <p
             style={{
-              width: "350px",
               color: "#5C5C5C",
               fontSize: "14px",
               fontWeight: 400,
@@ -71,8 +72,7 @@ const UpdatePassword = () => {
               textAlign: "center",
             }}
           >
-            Create a new password. Ensure it differs from previous ones for
-            security
+            Your new password must be different from previous passwords.
           </p>
 
           <div style={{ margin: "45px 0 20px 0" }}>
@@ -157,22 +157,28 @@ const UpdatePassword = () => {
             )}
           </div>
 
-          <Form.Item>
+          <Form.Item
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginTop: "10px",
+            }}
+          >
             <Button
               type="primary"
               htmlType="submit"
               block
               style={{
-                border: "none",
-                height: "51px",
-                background: "#F27405",
-                color: "white",
-                borderRadius: "8px",
-                outline: "none",
-                marginTop: "",
+                height: "52px",
+                width: "fit-content",
+                color: "#fff",
+                fontWeight: "400px",
+                fontSize: "14px",
+                background: "#BB6D42",
+                marginTop: "10px",
               }}
             >
-              UPDATE PASSWORD
+              Update Password
             </Button>
           </Form.Item>
         </Form>
