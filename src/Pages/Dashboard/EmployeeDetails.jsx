@@ -297,7 +297,7 @@ const EmployeeDetails = () => {
   };
 
   return (
-    <div className="mx-5 ">
+    <div className="m-5 ">
       <div
         style={{
           background: "white",
@@ -394,7 +394,7 @@ const EmployeeDetails = () => {
             dataSource={data}
             pagination={{
               itemRender: CustomPaginationButton,
-              pageSize: 10,
+              pageSize: 9,
               defaultCurrent: parseInt(page),
               onChange: handlePageChange,
               total: data.length,

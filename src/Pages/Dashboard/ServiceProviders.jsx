@@ -254,7 +254,7 @@ const ServiceProviders = () => {
         <div
           style={{
             display: "flex",
-            justifyContent: "end",
+            justifyContent: "center",
             alignItems: "center",
             gap: "10px",
             paddingRight: 10,
@@ -335,7 +335,7 @@ const ServiceProviders = () => {
   };
 
   return (
-    <div className="mx-5 ">
+    <div className="m-5">
       <div
         style={{
           background: "white",
@@ -433,7 +433,7 @@ const ServiceProviders = () => {
             pagination={{
               itemRender: CustomPaginationButton,
               align: "center",
-              pageSize: 10,
+              pageSize: 9,
               defaultCurrent: parseInt(page),
               // onChange: handlePageChange,
               total: data.length,

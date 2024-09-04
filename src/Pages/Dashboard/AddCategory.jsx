@@ -148,7 +148,7 @@ const AddCategory = () => {
               cursor: "pointer",
               border: "none",
               outline: "none",
-              color: "#DBB162",
+              color: "#A1A1A1",
               background: "white",
             }}
           >
@@ -161,7 +161,7 @@ const AddCategory = () => {
               border: "none",
               outline: "none",
               background: "white",
-              color: "red",
+              color: "#A1A1A1",
             }}
           >
             <FaRegTrashAlt size={20} />

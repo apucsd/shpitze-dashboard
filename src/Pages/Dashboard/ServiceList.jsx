@@ -322,17 +322,35 @@ const ServiceList = () => {
       title: "Date & Time",
       dataIndex: "dateTime",
       key: "dateTime",
+      render: (dateTime) => {
+        return (
+          <p
+            style={{
+              backgroundColor: "#F4F4F4",
+              width: "fit-content",
+              padding: "8px 10px",
+              borderRadius: "10px",
+              color: "#A1A1A1",
+            }}
+          >
+            {" "}
+            {dateTime}{" "}
+          </p>
+        );
+      },
     },
 
     {
       title: "Action",
       dataIndex: "action",
       key: "action",
+      align: "center",
       render: (_, record) => (
         <div
           style={{
             display: "flex",
             alignItems: "center",
+            justifyContent: "center",
             gap: "10px",
 
             paddingRight: 10,
@@ -403,7 +421,7 @@ const ServiceList = () => {
   };
 
   return (
-    <div className="mx-5">
+    <div className="m-5">
       <div
         style={{
           background: "white",
@@ -486,7 +504,7 @@ const ServiceList = () => {
             dataSource={data}
             pagination={{
               itemRender: CustomPaginationButton,
-              pageSize: 10,
+              pageSize: 9,
               defaultCurrent: parseInt(page),
               onChange: handlePageChange,
               total: data.length,

@@ -154,8 +154,6 @@ const Login = () => {
             <Form.Item name="remember" valuePropName="checked" noStyle>
               <Checkbox
                 style={{
-                  color: "black",
-
                   color: "#636363",
                   fontSize: "16px",
                 }}

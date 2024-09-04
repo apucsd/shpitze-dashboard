@@ -54,7 +54,7 @@ const UpdatePassword = () => {
           <h1
             style={{
               fontSize: "32px",
-              color: "black",
+              // color: "black",
               marginBottom: "13px",
               textAlign: "center",
               color: "#333333",
