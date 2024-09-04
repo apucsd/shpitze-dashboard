@@ -314,15 +314,7 @@ const BooksCategoryList = () => {
                 `Showing ${range[0]}-${range[1]} out of ${total}`,
               defaultPageSize: 20,
               //   defaultCurrent: 1,
-              style: {
-                marginBottom: 20,
-                marginLeft: 20,
-                marginRight: 20,
-                width: "100%",
-                display: "flex",
-                // gap: 10,
-                // justifyContent: "space-between",
-              },
+              style: { display: "flex", justifyContent: "center" }, // Center the pagination
             }}
           />
         </div>
@@ -343,7 +335,7 @@ const BooksCategoryList = () => {
             className="font-semibold text-[#555555] text-xl"
             style={{ marginBottom: "12px", marginTop: "8px" }}
           >
-            {itemForEdit ? "Update Books category" : "Add Books category"}
+            {itemForEdit ? "Update  category" : "Add  category"}
           </h1>
           <Form>
             <div>

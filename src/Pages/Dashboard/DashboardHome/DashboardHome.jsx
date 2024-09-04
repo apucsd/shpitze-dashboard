@@ -162,7 +162,7 @@ function DashboardHome() {
       </div> */}
       <div>
         <div className="flex gap-4 items-center bg-[#F7F7F7] my-2 px-4 mx-3 rounded-2xl">
-          <div className="col-span-3 border shadow w-[250px] space-y-3 h-[380px] bg-white p-4 rounded-md">
+          <div className="col-span-3  border-[0.5px] shadow w-[250px] space-y-3 h-[360px] bg-white p-4 rounded-md">
             <div className="flex items-center  gap-2">
               <span className="block">
                 <svg
@@ -202,12 +202,12 @@ function DashboardHome() {
         </div>
 
         <div className="grid grid-cols-12  gap-0 items-center">
-          <div className="col-span-6 bg-[#F7F7F7]  p-4 mx-3 rounded-2xl">
+          <div className="col-span-6 bg-[#F7F7F7] shadow-md  p-4 mx-2 rounded-2xl">
             {/* total services */}
 
             <TotalSellerChart />
           </div>
-          <div className="col-span-6 bg-[#F7F7F7] shadow-md p-4 mx-3 rounded-2xl">
+          <div className="col-span-6 bg-[#F7F7F7] shadow-md p-4 mx-2 rounded-2xl">
             {/* total Employee */}
             <TotalEmployeeChart />
           </div>

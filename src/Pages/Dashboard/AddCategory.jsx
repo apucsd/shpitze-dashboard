@@ -6,6 +6,7 @@ import { PlusOutlined } from "@ant-design/icons";
 import Swal from "sweetalert2";
 import Logo from "../../assets/logo.png";
 import { FiSearch } from "react-icons/fi";
+import { CustomPaginationButton } from "../../Components/ui/CustomPaginationButton";
 
 const data = [
   {
@@ -276,28 +277,15 @@ const AddCategory = () => {
         </div>
         <div>
           <Table
-            rowSelection={rowSelection}
             columns={columns}
-            style={{}}
             dataSource={data}
             pagination={{
+              itemRender: CustomPaginationButton,
               pageSize: 10,
               defaultCurrent: parseInt(page),
               onChange: handlePageChange,
-              total: 85,
-              showTotal: (total, range) =>
-                `Showing ${range[0]}-${range[1]} out of ${total}`,
-              defaultPageSize: 20,
-              //   defaultCurrent: 1,
-              style: {
-                marginBottom: 20,
-                marginLeft: 20,
-                marginRight: 20,
-                width: "100%",
-                display: "flex",
-                // gap: 10,
-                // justifyContent: "space-between",
-              },
+              total: data.length,
+              style: { display: "flex", justifyContent: "center" }, // Center the pagination
             }}
           />
         </div>
@@ -318,7 +306,7 @@ const AddCategory = () => {
             className="font-semibold text-[#555555] text-xl"
             style={{ marginBottom: "10px", marginTop: "8px" }}
           >
-            {itemForEdit ? "Update Books category" : "Add Books category"}
+            {itemForEdit ? "Update  category" : "Add  category"}
           </h1>
           <Form>
             <div>
@@ -338,7 +326,7 @@ const AddCategory = () => {
                 />
               </Form.Item>
             </div>
-
+            {/* 
             <div style={{ width: "100%", marginBottom: "10px" }}>
               <p className="text-black py-1">Category </p>
               <Select
@@ -404,11 +392,11 @@ const AddCategory = () => {
                   type="text"
                 />
               </Form.Item>
-            </div>
+            </div> */}
 
             <div className="text-center mt-8">
-              <button className="bg-[#DBB162] px-6 py-3 w-full text-[#FEFEFE] rounded-md">
-                Upload Book
+              <button className="bg-[#BB6D42] px-6 py-3 w-full text-[#FEFEFE] rounded-md">
+                Add Category
               </button>
             </div>
           </Form>

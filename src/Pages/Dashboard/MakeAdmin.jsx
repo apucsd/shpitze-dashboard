@@ -8,6 +8,7 @@ const { Option } = Select;
 
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { CustomPaginationButton } from "../../Components/ui/CustomPaginationButton";
 
 const data = [
   {
@@ -307,26 +308,14 @@ const SalonCategoryList = () => {
         <div>
           <Table
             columns={columns}
-            style={{}}
             dataSource={data}
             pagination={{
+              itemRender: CustomPaginationButton,
               pageSize: 10,
               defaultCurrent: parseInt(page),
               onChange: handlePageChange,
-              total: 85,
-              showTotal: (total, range) =>
-                `Showing ${range[0]}-${range[1]} out of ${total}`,
-              defaultPageSize: 20,
-              //   defaultCurrent: 1,
-              style: {
-                marginBottom: 20,
-                marginLeft: 20,
-                marginRight: 20,
-                width: "100%",
-                display: "flex",
-                // gap: 10,
-                // justifyContent: "space-between",
-              },
+              total: data.length,
+              style: { display: "flex", justifyContent: "center" }, // Center the pagination
             }}
           />
         </div>

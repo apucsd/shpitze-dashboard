@@ -3,6 +3,7 @@ import { Input, Select, Table } from "antd";
 import { FiArrowUpRight, FiSearch } from "react-icons/fi";
 import { dateOptions, locationItems, reportTypes } from "../../../constant";
 import UserDetailsModal from "../../../Components/Dashboard/UserDetailsModal";
+import { CustomPaginationButton } from "../../../Components/ui/CustomPaginationButton";
 const data = [
   {
     SNo: "#500",
@@ -280,23 +281,13 @@ const Report = () => {
             columns={columns}
             dataSource={data}
             pagination={{
+              itemRender: CustomPaginationButton,
               pageSize: 10,
               defaultCurrent: parseInt(page),
               onChange: handlePageChange,
-              total: 85,
-              showTotal: (total, range) =>
-                `Showing ${range[0]}-${range[1]} out of ${total}`,
-              defaultPageSize: 20,
-              // defaultCurrent: 1,
-              style: {
-                marginBottom: 20,
-                marginLeft: 20,
-                marginRight: 20,
-                width: "100%",
-                display: "flex",
-                // gap: 10,
-                // justifyContent: "space-between",
-              },
+              total: data.length,
+
+              style: { display: "flex", justifyContent: "center" }, // Center the pagination
             }}
           />
         </div>

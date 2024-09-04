@@ -234,7 +234,7 @@ const TotalEmployeeChart = () => {
           </p>
         </Dropdown>
       </div>
-      <ResponsiveContainer width={"100%"} height={180}>
+      <ResponsiveContainer width={"100%"} height={170}>
         <BarChart data={data} barGap={100}>
           <CartesianGrid strokeDasharray="20 20" horizontal vertical={false} />
           <XAxis

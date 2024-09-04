@@ -4,6 +4,7 @@ import Logo from "../../assets/logossss.png";
 import { FiArrowUpRight, FiSearch } from "react-icons/fi";
 import UserDetailsModal from "../../Components/Dashboard/UserDetailsModal";
 import { locationItems, ratingItems } from "../../constant";
+import { CustomPaginationButton } from "../../Components/ui/CustomPaginationButton";
 
 const data = [
   {
@@ -415,7 +416,7 @@ const ServiceList = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            margin: "10px 0",
+            padding: "8px 0",
           }}
         >
           <div>
@@ -484,23 +485,12 @@ const ServiceList = () => {
             columns={columns}
             dataSource={data}
             pagination={{
+              itemRender: CustomPaginationButton,
               pageSize: 10,
               defaultCurrent: parseInt(page),
               onChange: handlePageChange,
-              total: 85,
-              showTotal: (total, range) =>
-                `Showing ${range[0]}-${range[1]} out of ${total}`,
-              defaultPageSize: 20,
-              // defaultCurrent: 1,
-              style: {
-                // marginBottom: 20,
-                // marginLeft: 20,
-                // marginRight: 20,
-                width: "100%",
-                display: "flex",
-                // gap: 10,
-                // justifyContent: "space-between",
-              },
+              total: data.length,
+              style: { display: "flex", justifyContent: "center" }, // Center the pagination
             }}
           />
         </div>

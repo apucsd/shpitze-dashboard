@@ -482,15 +482,7 @@ const DonorsRecord = () => {
                 `Showing ${range[0]}-${range[1]} out of ${total}`,
               defaultPageSize: 20,
               //   defaultCurrent: 1,
-              style: {
-                marginBottom: 20,
-                marginLeft: 20,
-                marginRight: 20,
-                width: "100%",
-                display: "flex",
-                // gap: 10,
-                // justifyContent: "space-between",
-              },
+              style: { display: "flex", justifyContent: "center" }, // Center the pagination
             }}
           />
         </div>

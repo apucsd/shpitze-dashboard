@@ -167,7 +167,7 @@ const TotalEarningGrowth = () => {
           </p>
         </Dropdown>
       </div>
-      <ResponsiveContainer width={"100%"} height={380}>
+      <ResponsiveContainer width={"100%"} height={370}>
         <AreaChart data={data} barGap={100}>
           <defs>
             <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">

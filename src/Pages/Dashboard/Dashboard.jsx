@@ -155,7 +155,7 @@ const Dashboard = () => {
           // overflowX: "hidden",
           zIndex: 2,
           backgroundColor: "white",
-          maxHeight: "90vh",
+          maxHeight: "88vh",
 
           // overflowY: "scroll",
         }}
@@ -191,7 +191,7 @@ const Dashboard = () => {
             flexDirection: "column",
             gap: "5px",
             height: "90%",
-            marginTop: 10,
+            marginTop: 15,
             color: "#767676",
           }}
         >
@@ -445,6 +445,7 @@ const Dashboard = () => {
             borderRadius: "20px",
             overflow: "auto",
             // padding: "20px",
+            maxHeight: "88vh",
           }}
         >
           <Outlet />

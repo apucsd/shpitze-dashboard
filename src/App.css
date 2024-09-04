@@ -18,7 +18,9 @@
   color: #000b90;
   font-weight: bold;
 }
-
+:where(.css-dev-only-do-not-override-11lehqq) a:hover {
+  color: #333333;
+}
 :where(.css-dev-only-do-not-override-17a39f8).ant-table-wrapper
   .ant-table-thead
   > tr
@@ -75,4 +77,14 @@
 }
 .ant-layout {
   background-color: #ebebeb;
+}
+.ant-pagination .ant-pagination-item-active a {
+  background: #bb6d42 !important;
+  z-index: 10;
+}
+/* .ant-pagination-item {
+  background: red !important;
+} */
+.ant-table-tbody > tr > td {
+  color: #636363;
 }
