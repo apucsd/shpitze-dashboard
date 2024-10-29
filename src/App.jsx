@@ -34,70 +34,77 @@ import TransactionDetails from "./Pages/Dashboard/TransactionDetails";
 import AddCategory from "./Pages/Dashboard/AddCategory";
 import AddSubCategory from "./Pages/Dashboard/AddSubCategory";
 import Report from "./Pages/Dashboard/Settings/Report";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 
 function App() {
   return (
     <>
-      <div className="maincontainer">
-        <Router>
-          <Routes>
-            <Route
-              exact
-              path="/"
-              element={
-                <PrivateRoute>
-                  <Dashboard />
-                </PrivateRoute>
-              }
-            >
-              <Route path="/" element={<DashboardHome />} />
-              <Route path="/service-providers" element={<ServiceProviders />} />
-              <Route path="/employee-details" element={<EmployeeDetails />} />
-              <Route path="/service-list" element={<ServiceList />} />
+      <Provider store={store}>
+        <div className="maincontainer">
+          <Router>
+            <Routes>
               <Route
-                path="/transaction-details"
-                element={<TransactionDetails />}
-              />
-              {/* 
+                exact
+                path="/"
+                element={
+                  <PrivateRoute>
+                    <Dashboard />
+                  </PrivateRoute>
+                }
+              >
+                <Route path="/" element={<DashboardHome />} />
+                <Route
+                  path="/service-providers"
+                  element={<ServiceProviders />}
+                />
+                <Route path="/employee-details" element={<EmployeeDetails />} />
+                <Route path="/service-list" element={<ServiceList />} />
+                <Route
+                  path="/transaction-details"
+                  element={<TransactionDetails />}
+                />
+                {/* 
               <Route
               path="/books-category-list"
               element={<BooksCategoryList />}
               /> */}
-              <Route path="/add-category" element={<AddCategory />} />
-              <Route path="/add-subcategory" element={<AddSubCategory />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/faq" element={<FAQ />} />
-              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-              <Route path="/terms" element={<Terms />} />
-              <Route path="/reports" element={<Report />} />
-              <Route path="/add-admin" element={<MakeAdmin />} />
+                <Route path="/add-category" element={<AddCategory />} />
+                <Route path="/add-subcategory" element={<AddSubCategory />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/faq" element={<FAQ />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/terms" element={<Terms />} />
+                <Route path="/reports" element={<Report />} />
+                <Route path="/add-admin" element={<MakeAdmin />} />
 
-              <Route path="/notification" element={<Notification />} />
-              <Route path="/setting" element={<FAQ />} />
-              <Route path="/sic" element={<SICguidelines />} />
-              <Route path="/make-admin" element={<MakeAdmin />} />
-              <Route path="/admin-profile" element={<AdminProfile />} />
-              <Route path="/upload-donation" element={<UploadDonation />} />
+                <Route path="/notification" element={<Notification />} />
+                <Route path="/setting" element={<FAQ />} />
+                <Route path="/sic" element={<SICguidelines />} />
+                <Route path="/make-admin" element={<MakeAdmin />} />
+                <Route path="/admin-profile" element={<AdminProfile />} />
+                <Route path="/upload-donation" element={<UploadDonation />} />
 
-              <Route
-                path="/setting-change-password"
-                element={<ChangePassword />}
-              />
-              {/* <Route path="/privacy" element={<PrivacyPolicy />} /> */}
+                <Route
+                  path="/setting-change-password"
+                  element={<ChangePassword />}
+                />
+                {/* <Route path="/privacy" element={<PrivacyPolicy />} /> */}
 
-              {/* <Route path="/settings-profile" element={<Profile />} />  */}
+                {/* <Route path="/settings-profile" element={<Profile />} />  */}
 
-              <Route path="/feedback" element={<Feedback />} />
-            </Route>
+                <Route path="/feedback" element={<Feedback />} />
+              </Route>
 
-            <Route path="/login" element={<Login />} />
-            <Route path="/forgot-password" element={<ForgotPassword />} />
-            <Route path="/otp" element={<Otp />} />
-            <Route path="/update-password" element={<UpdatePassword />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Router>
-      </div>
+              <Route path="/login" element={<Login />} />
+              <Route path="/forgot-password" element={<ForgotPassword />} />
+              <Route path="/otp" element={<Otp />} />
+              <Route path="/update-password" element={<UpdatePassword />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Router>
+        </div>
+      </Provider>
     </>
   );
 }

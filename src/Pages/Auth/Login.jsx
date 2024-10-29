@@ -4,12 +4,13 @@ import { useNavigate } from "react-router";
 import Logo from "../../assets/logo.png";
 
 import "./style.css";
+import { useLoginUserMutation } from "../../redux/features/api/authApi";
 const Login = () => {
+  const [loginUser] = useLoginUserMutation();
+
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
   };
-
-  const navigate = useNavigate();
 
   return (
     <div
@@ -178,7 +179,6 @@ const Login = () => {
             }}
           >
             <Button
-              onClick={() => navigate("/")}
               type="primary"
               htmlType="submit"
               className="login-form-button"
